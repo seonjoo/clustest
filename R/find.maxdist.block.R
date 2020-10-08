@@ -6,11 +6,12 @@
 #'
 #' @return aa
 #' @import pdist
+#' @import parallel
 #' @export
 #'
 #' @examples
 find.maxdist.block<-function(dat,indx, seg.length=1000){
-  if(seg.length>nrow(indx)){seg.length = min(seg.length, floor(nrow/4))}
+  if(seg.length>length(indx)){seg.length = min(seg.length, floor(nrow/4))}
   n=length(indx)
   num.seg=ceiling(n /seg.length)
   #print(num.seg)
