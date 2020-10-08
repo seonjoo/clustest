@@ -6,7 +6,8 @@
 #' @param seg.length
 #' @param n.cores
 #'
-#' @return
+#' @return aa
+#' @import pdist
 #' @export
 #'
 #' @examples

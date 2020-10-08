@@ -4,7 +4,8 @@
 #' @param indx
 #' @param seg.length
 #'
-#' @return
+#' @return aa
+#' @import pdist
 #' @export
 #'
 #' @examples

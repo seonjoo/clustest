@@ -5,8 +5,8 @@
 #' @param method
 #' @param seg.length (=default=100)
 #' @param n.cores
-#'
-#' @return
+#' @import pdist
+#' @return dunn
 #' @export
 #'
 #' @examples
@@ -18,8 +18,12 @@
 #' mvrnorm(n=n, rep(-5,2),sigma))
 #' cfit = lapply(2:5,function(k)kmeans(x,k,nstart=10))
 #' dunn.score<-unlist(mclapply(cfit, function(obj) dunn.block( obj$cluster,Data=x), mc.cores=4))
-dunn.block<-function (clusters, Data = NULL, method = "euclidean",
-                         seg.length=min(100,nrow(Data),n.cores=4)
+
+dunn.block<-function(clusters,
+                     Data = NULL,
+                     method = "euclidean",
+                     seg.length=min(100,nrow(Data)),
+                     n.cores=4)
 {
   nc <- max(clusters)
   interClust <- matrix(NA, nc, nc)
