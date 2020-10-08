@@ -13,7 +13,15 @@ dunn.block(
 )
 }
 \arguments{
+\item{Data}{: dataset (n x p) rows are each observation, columns are variables}
+
+\item{method}{('eucleadian')}
+
 \item{seg.length}{(=default=100)}
+
+\item{n.cores}{(default=4)}
+
+\item{clusters:}{cluster membership. It has to have the cluster index in numeric (e.g. 1,2,3,..,K.max)}
 }
 \value{
 dunn

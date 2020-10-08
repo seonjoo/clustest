@@ -1,10 +1,10 @@
 #' Compute Dunn index usign blockwise computation
 #'
-#' @param clusters
-#' @param Data
-#' @param method
+#' @param clusters: cluster membership. It has to have the cluster index in numeric (e.g. 1,2,3,..,K.max)
+#' @param Data : dataset (n x p) rows are each observation, columns are variables
+#' @param method ('eucleadian')
 #' @param seg.length (=default=100)
-#' @param n.cores
+#' @param n.cores (default=4)
 #' @import pdist
 #' @return dunn
 #' @export

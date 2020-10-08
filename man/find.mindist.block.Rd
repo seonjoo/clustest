@@ -7,10 +7,19 @@
 find.mindist.block(dat, indx1, indx2, seg.length = 100, n.cores = 4)
 }
 \arguments{
-\item{n.cores}{}
+\item{dat}{: n x p matrix with rows are observations, columns are variables}
+
+\item{indx1}{: 1< length(indx1) < n index vector}
+
+\item{indx2}{: 1< length(indx2) < n index vector}
+
+\item{seg.length}{: segmentation length (default=1000).
+If seg.length> min(length(indx1),length(indx2)), floor(min(length(indx1),length(indx2))/2) will be used.}
+
+\item{n.cores}{: number of cores (default=4)}
 }
 \value{
-aa
+aa : minimum distance between indexed blocks.
 }
 \description{
 Compute the minimum distance between data block.

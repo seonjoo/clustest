@@ -1,12 +1,13 @@
 #' Compute the minimum distance between data block.
 #'
-#' @param dat
-#' @param indx1
-#' @param indx2
-#' @param seg.length
-#' @param n.cores
+#' @param dat : n x p matrix with rows are observations, columns are variables
+#' @param indx1 : 1< length(indx1) < n index vector
+#' @param indx2 : 1< length(indx2) < n index vector
+#' @param seg.length : segmentation length (default=1000).
+#' If seg.length> min(length(indx1),length(indx2)), floor(min(length(indx1),length(indx2))/2) will be used.
+#' @param n.cores : number of cores (default=4)
 #'
-#' @return aa
+#' @return aa : minimum distance between indexed blocks.
 #' @import pdist
 #' @export
 #'
@@ -14,6 +15,7 @@
 find.mindist.block<-function(dat,indx1,indx2,seg.length=100, n.cores=4){
   n1=length(indx1)
   n2=length(indx2)
+  if(seg.length>min(n1,n2)){seg.length = floor(min(n1,n2)/2)}
   num.seg1=ceiling(n1 /seg.length)
   num.seg2=ceiling(n2 /seg.length)
 
